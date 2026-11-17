@@ -1,100 +1,180 @@
 
-# AI-Powered Sales Forecasting & Customer Churn Prediction Dashboard
+# SalesSight AI – Sales Forecasting & Customer Churn Intelligence Dashboard
 
-## Overview
+An interactive, AI-powered business intelligence application that combines time-series sales forecasting and machine learning-based customer churn prediction to help businesses explore historical trends, anticipate future sales and understand customer retention risks.
 
-This is a Streamlit web app that allows users to:
+## Project Overview
 
-- **Forecast future sales trends** using historical sales data with Prophet (time series forecasting).
-- **Predict customer churn** using machine learning (XGBoost classifier) on customer data.
+SalesSight AI is a Python and Streamlit application designed to turn business datasets into actionable analytical insights.
 
-The app provides interactive visualizations and model performance insights to help businesses make data-driven decisions.
+The application brings together two analytical capabilities:
 
-## Features
+- **Sales Forecasting:** Uses Prophet time-series forecasting to analyse historical sales data and estimate future sales trends.
+- **Customer Churn Prediction:** Uses an XGBoost classification model to analyse customer data and predict churn outcomes.
 
-- Upload sales data CSV (columns: `Date`, `Sales`) to generate sales forecasts with confidence intervals.
-- Upload customer churn dataset (with `Churn` target column) to train and test a churn prediction model.
-- Visualize forecast trends and churn feature importance.
-- Easy-to-use tabs for switching between forecasting and churn prediction.
-- Built with Python, Streamlit, Prophet, XGBoost, and other popular data science libraries.
+The goal is to make predictive analytics more accessible through an interactive dashboard.
 
-Demo vedio : 
-https://www.loom.com/share/0cd95c3e1ca94c36a97887b21d811590?sid=af8073da-a87b-4a4c-85b6-552561e7beaf
+## Key Features
 
-## Installation
+### 1. Sales Forecasting
+- Upload historical sales data in CSV format.
+- Analyse historical sales trends.
+- Generate future sales forecasts using Prophet.
+- Visualize forecast trends and confidence intervals.
+- Explore future sales patterns using the selected forecast horizon.
 
-1. Clone this repository:
+### 2. Customer Churn Prediction
+- Upload customer datasets in CSV format.
+- Train and evaluate a churn prediction model using XGBoost.
+- Predict customer churn using a binary target variable.
+- Explore model insights and feature importance.
+- Understand factors associated with customer churn.
 
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-   Install required packages:
+### 3. Interactive Dashboard
+- Separate tabs for sales forecasting and churn prediction.
+- Interactive data visualizations.
+- CSV-based data input.
+- Model performance insights.
+- User-friendly Streamlit interface.
 
-   
+## Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Dashboard | Streamlit |
+| Sales Forecasting | Prophet |
+| Machine Learning | XGBoost, Scikit-learn |
+| Data Processing | Pandas |
+| Visualization | Matplotlib |
+| Data Input | CSV |
+
+## Application Workflow
+
+1. Upload the required business dataset.
+2. Validate and prepare the input data.
+3. Select the sales forecasting or churn prediction workflow.
+4. Execute the corresponding analytical model.
+5. Explore predictions, visualizations and model insights.
+6. Interpret the outputs to support business decisions.
+
+## Dataset Requirements
+
+### Sales Forecasting Dataset
+
+Upload a CSV file containing:
+
+| Column | Description |
+|---|---|
+| Date | Historical sales date |
+| Sales | Numeric sales value |
+
+Example:
+
+```csv
+Date,Sales
+2023-01-01,1234.56
+2023-01-02,1300.45
+2023-01-03,1450.20
+```
+
+Dates should follow the `YYYY-MM-DD` format.
+
+### Customer Churn Dataset
+
+Upload a CSV file containing customer features and a target column named `Churn`.
+
+Example structure:
+
+```csv
+CustomerID,Feature1,Feature2,Churn
+1001,Value1,Value2,0
+1002,Value3,Value4,1
+```
+
+The target column uses:
+- `0` – Customer retained
+- `1` – Customer churned
+
+The actual feature columns should be appropriate for the trained model and dataset.
+
+## Installation & Setup
+
+### Prerequisites
+
+- Python installed
+- pip package manager
+- Git
+
+### Step 1: Clone the repository
+
+```bash
+git clone "https://github.com/rayeesa163/SalesSight-AI-Forecasting-Churn-Intelligence-Dashboard..git"
+```
+
+### Step 2: Navigate to the project directory
+
+```bash
+cd "SalesSight-AI-Forecasting-Churn-Intelligence-Dashboard."
+```
+
+### Step 3: Install dependencies
+
+```bash
 pip install streamlit prophet xgboost scikit-learn pandas matplotlib
+```
 
+### Step 4: Run the application
 
+```bash
+python -m streamlit run notebooks/streamlit_app/sales_forecasting_suite_all.py
+```
 
+### Step 5: Open the dashboard
 
-Run the app:
-python -m streamlit run notebooks\streamlit_app\sales_forecasting_suite_all.py
+Open the local URL displayed in your terminal, usually:
 
+```text
+http://localhost:8501
+```
 
+## Demo Video
 
-Usage
-Open the URL shown in your terminal (usually http://localhost:8501).
+Watch the project demonstration:
 
-Use the Sales Forecasting tab to upload sales data CSV and choose forecast horizon.
+[SalesSight AI – Project Demo](https://www.loom.com/share/0cd95c3e1ca94c36a97887b21d811590)
 
-Use the Churn Prediction tab to upload customer data CSV and view churn prediction results.
+## Business Applications
 
-Explore the visual outputs and model insights.
+SalesSight AI demonstrates how predictive analytics can support:
 
-Dataset Format
-Sales Data CSV
-Date	Sales
-2023-01-01	1234.56
-2023-01-02	1300.45
-...	...
+- Sales trend analysis and forecasting.
+- Business planning and revenue estimation.
+- Customer churn risk identification.
+- Customer retention analysis.
+- Data-driven business decision-making.
 
-Date should be in YYYY-MM-DD format.
+## Future Enhancements
 
-Sales is numeric daily/weekly/monthly sales.
+- Interactive KPI and business performance dashboards.
+- Advanced forecasting model comparisons.
+- Customer segmentation and retention recommendations.
+- Automated data quality checks.
+- Cloud deployment and database integration.
+- More detailed model evaluation and explainability.
 
-Churn Data CSV
-CustomerID	Feature1	Feature2	...	Churn
-1001	...	...	...	0 or 1
+## Author
 
-Must contain a Churn column with binary values (0 = retained, 1 = churned).
+**S. Rayeesa Tabasum Shaik**
 
-Future Improvements
-Add a customer support chatbot for real-time query handling.
+B.Tech – Computer Science and Engineering (Artificial Intelligence)
 
-Integrate more advanced forecasting models.
+GitHub: [rayeesa163](https://github.com/rayeesa163)
 
-Deploy on cloud platforms for broader access.
-
-License
-This project is open source and free to use.
-
-Created by S Rayeesa Tabusum
-
-yaml
-Copy
-Edit
+LinkedIn: [S. Rayeesa Tabasum](https://www.linkedin.com/in/s-rayeesa-tabasum-3b2526351/)
 
 ---
 
-### How to add this README to your GitHub repo:
+*Built with Python, Streamlit, Prophet and XGBoost.*
 
-1. Save above content as `README.md` in your project folder.
-
-2. In your terminal inside the project folder:
-
-```bash
-git init               # if you haven't initialized git repo yet
-git add README.md
-git commit -m "Add README with project overview"
-git remote add origin https://github.com/your-username/your-repo-name.git
-git push -u origin main
 
